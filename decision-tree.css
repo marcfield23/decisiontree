@@ -1,0 +1,312 @@
+/* decision-tree.css - Material Design Refinement - Last Screen Alignment - TOOLTIPS - TRANSPOSED TABLE */
+
+/* Booking.com Inspired Colors & Material Design Layout - Refined for Material Design Typography & Spacing */:root {
+    --booking-blue-primary: #0071c2;
+    --booking-blue-darker: #005a95;
+    --booking-blue-lighter: #e0f2f7;
+    --material-grey-background: #f0f2f5;
+    --material-grey-text: #333333;
+    --material-light-grey-text: #777777;
+    --material-white: #ffffff;
+    --material-shadow-color: rgba(0, 0, 0, 0.12);
+    --tooltip-background: #333; /* Dark background for tooltip */
+    --tooltip-color: #fff;       /* White text color for tooltip */
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Roboto for Material Design */
+    background-color: var(--material-grey-background);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Center the container horizontally */
+    align-items: flex-start;
+    min-height: 100vh;
+    color: var(--material-grey-text);
+    line-height: 1.5; /* Improved default line-height for body text */
+}.container {
+    background-color: var(--material-white);
+    padding: 24px; /* Material Design spacing - multiple of 4 */
+    border-radius: 4px; /* Material Design rounded corners */
+    box-shadow: 0 2px 4px var(--material-shadow-color);
+    /* max-width: 700px;  REMOVED max-width to allow full width */
+    width: 95%; /* Use a percentage width to leave some margin on very wide screens */
+    max-width: 1200px; /* ADDED a LARGER max-width if you want to limit extreme width */
+}
+
+h1, h2, h3, h4 {
+    color: var(--booking-blue-primary);
+    font-weight: 500;
+    margin-bottom: 0.5em; /* Consistent bottom margin */
+    line-height: 1.3; /* Tighter line height for headings */
+    text-align: left; /* Default left align for all headings within container */ /* ADDED for left alignment */
+}
+
+h1 {
+    font-size: 2.0rem; /* Slightly smaller H1 - Display 1 in Material Scale */
+    text-align: center; /* Main page title - can be centered */
+    margin-bottom: 0.8em; /* More bottom margin for main title */
+}
+
+h2 {
+    font-size: 1.5rem; /* H2 - Headline 5 in Material Scale */
+    margin-top: 0.8em; /* More top margin for section headings */
+}
+
+h3 {
+    font-size: 1.25rem; /* H3 - Headline 6 in Material Scale */
+    margin-top: 0.8em;
+}
+
+h4 {
+    font-size: 1rem; /* H4 - Subtitle 1 in Material Scale */
+    font-weight: 400; /* Lighter weight for subtitles */
+    color: var(--material-grey-text); /* Slightly darker than light grey, but distinct from main title */
+    margin-top: 1.2em; /* More top margin for visual separation */
+}
+.question-card,.recommendation-card {
+    background-color: var(--material-white);
+    padding: 24px; /* Material Design spacing */
+    border-radius: 4px; /* Material Design rounded corners */
+    box-shadow: 0 1px 3px var(--material-shadow-color);
+    margin-bottom: 16px; /* Material Design spacing */
+    text-align: left; /* Left align text in cards by default */ /* ADDED for left alignment */
+}.recommendation-card {
+    text-align: left; /* Ensure left alignment for recommendation card content */ /* ADDED for left alignment - redundant but explicit */
+}
+
+
+#question-text {
+    margin-top: 0;
+    font-size: 1.125rem; /* Slightly larger than body - Body 1/Body 2 Medium in Material Scale */
+    font-weight: 500; /* Medium weight for question text */
+}
+
+#question-context-text {
+    margin-top: 8px; /* Material Design spacing */
+    font-style: italic;
+    color: var(--material-light-grey-text);
+    font-size: 0.875rem; /* Caption in Material Scale */
+    line-height: 1.4; /* Slightly tighter line height for context */
+}
+
+
+#options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Material Design spacing */
+    margin-top: 16px; /* Material Design spacing */
+}
+
+button, #job-select { /* Apply shared styles to button and job-select */
+    padding: 10px 24px; /* Material Design button padding - applied to dropdown too */
+    border-radius: 4px; /* Material Design button rounded corners - applied to dropdown too */
+    font-size: 1rem; /* Button text - Body 1 in Material Scale - applied to dropdown text */
+    font-weight: 500; /* Medium weight for button text - applied to dropdown text */
+    text-transform: uppercase; /* Material Design buttons are often uppercase - applied to dropdown text */
+    letter-spacing: 0.02857em; /* Slight letter spacing for uppercase text - applied to dropdown text */
+    border: 1px solid #ccc; /* Add a border to the dropdown to visually match button 'edge' */
+}
+
+
+button { /* Styles specific to buttons only */
+    border: none; /* Remove default border for buttons */
+    background-color: var(--booking-blue-primary);
+    color: var(--material-white);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 2px var(--material-shadow-color); /* Slightly increased button shadow for elevation */
+}
+
+button:hover {
+    background-color: var(--booking-blue-darker);
+}
+
+#job-select { /* Styles specific to job-select dropdown */
+    -webkit-appearance: none; /* Remove default appearance in Chrome */
+    -moz-appearance: none;    /* Remove default appearance in Firefox */
+    appearance: none;         /* Remove default appearance in other browsers*/
+    background-color: var(--material-white); /* White background for dropdown */
+    color: var(--material-grey-text); /* Dark grey text for dropdown */
+    cursor: pointer; /* Make cursor a pointer on hover */
+    box-shadow: 0 1px 2px var(--material-shadow-color); /* Add a subtle shadow to dropdown */
+    width: 100%; /* Make dropdown full width of its container */
+    text-align: left; /* Left align text within dropdown */ /* ADDED for left alignment */
+    padding-left: 16px; /* Add left padding to dropdown text for better alignment with cards */ /* ADDED for left alignment */
+}
+
+/* For IE and Edge */
+select::-ms-expand {
+    display: none; /* Hide default dropdown arrow in IE/Edge */
+}
+
+/* Styling for the dropdown arrow (using a background image) - Optional, for customization */
+#job-select {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="currentColor" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: center;
+    padding-right: 24px; /* Make space for the arrow */
+}
+
+
+#back-button, #start-over-button { /* Adjusted for Start Over button too for consistency */
+    background-color: #999999;
+    color: var(--material-white);
+    padding: 8px 16px; /* Slightly smaller padding for auxiliary buttons */
+    border-radius: 4px; /* Material Design rounded corners */
+    border: none;
+    cursor: pointer;
+    font-size: 0.875rem; /* Caption/Button text - Material Scale */
+    font-weight: 500;
+    margin-top: 16px; /* Material Design spacing */
+    align-self: flex-start;
+    box-shadow: 0 1px 2px var(--material-shadow-color);
+    text-transform: uppercase; /* Consistent uppercase for buttons */
+    letter-spacing: 0.02857em;
+}
+
+#back-button:hover, #start-over-button:hover {
+    background-color: #777777;
+}
+.recommendation-card {
+    background-color: var(--booking-blue-lighter);
+    border: none;
+    box-shadow: 0 1px 3px var(--material-shadow-color);
+}.recommendation-card h2 {
+    color: var(--booking-blue-primary);
+    margin-top: 0; /* Align closer to the top in recommendation card */
+    text-align: left; /* Left align Recommendation title */ /* ADDED for left alignment */
+}.recommendation-card p {
+    font-size: 1rem; /* Body 1 in Material Scale for recommendation text */
+    line-height: 1.6;
+    text-align: left; /* Left align recommendation paragraphs */ /* ADDED for left alignment */
+}
+
+/* --- Table Styles - Minimal changes, ensure consistency with text styles --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px; /* Material Design spacing */
+    margin-bottom: 16px; /* Material Design spacing */
+    font-size: 0.875rem; /* Caption in Material Scale for table text - can be smaller */
+    text-align: left; /* Left align table text */ /* ADDED for left alignment */
+}
+
+th, td {
+    padding: 12px 16px; /* Adjusted table cell padding */
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    font-weight: 500;
+    color: var(--material-grey-text);
+    text-align: left; /* Left align table header text */ /* ADDED for left alignment */
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* --- Recommendation History Table Styles --- */.recommendation-history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Add some space above the table */
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    border: 1px solid #ddd; /* Light border around the table */
+    table-layout: fixed; /* Fixed table layout - for responsiveness */
+    word-break: break-word; /* Break long words - for responsiveness */
+    overflow-wrap: break-word; /* For very long words - responsiveness */
+}
+
+/* --- Table Scroll Container --- */.table-scroll-container {
+    overflow-x: auto; /* Enable horizontal scrolling if table is too wide */
+    width: 100%; /* **MODIFIED**: Use full width of parent */
+    /* max-width: 100%; REMOVED max-width from scroll container */
+}
+.recommendation-history-table th,.recommendation-history-table td {
+    padding: 12px; /* Slightly reduced padding for cells */
+    border: 1px solid #ddd; /* Borders for table cells */
+    text-align: left;
+    overflow-wrap: break-word; /* For very long words in cells - responsiveness */
+    /* min-width: 150px;  Wider min-width for columns - ADJUST AS NEEDED */
+    vertical-align: top; /* Align text to the top of the cell */
+    line-height: 1.4; /* Improved line height within table cells */
+    position: relative; /* For tooltip positioning context */ /* **TOOLTIP CONTEXT** */
+}.recommendation-history-table th {
+    background-color: var(--booking-blue-lighter); /* Light blue header background */
+    font-weight: 500;
+    padding: 14px 12px; /* Slightly more padding for header cells */
+    text-align: center; /* Center header text in transposed table */ /* **TRANSPOSED TABLE** */
+}.recommendation-history-table td {
+    text-align: center; /* Center cell text in transposed table */ /* **TRANSPOSED TABLE** */
+}
+.recommendation-history-table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Alternating row background for readability */
+}
+
+
+/* --- Transposed Table Specific Styles --- */.transposed-table {
+    /* No major changes needed structurally, just adjust widths and header/cell alignment if desired */
+}.transposed-table th {
+    /* Styles already applied above in.recommendation-history-table th */
+    width: auto; /* Headers adjust width based on content */ /* **TRANSPOSED TABLE** */
+    min-width: auto; /* Reset min-width for headers */ /* **TRANSPOSED TABLE** */
+}.transposed-table td {
+    /* Styles already applied above in.recommendation-history-table td */
+    width: auto; /* Cells adjust width based on content */ /* **TRANSPOSED TABLE** */
+    min-width: auto; /* Reset min-width for cells */  /* **TRANSPOSED TABLE** */
+}
+
+
+/* --- Specific column widths (Optional - Customize as needed - Example for non-transposed table) --- */
+/* In a transposed table, these column width rules might not be as directly applicable.
+   You might need to adjust widths based on the *rows* in the transposed table if needed,
+   but often letting the content determine width works better for transposed layouts. */
+
+/* Example - if you *still* want to control "column" (now visually rows) widths in the transposed table: */.transposed-table th:nth-child(1) { /* Targets the *first row* header (which is "Job Evaluated") */
+    width: 200px; /* Example width for "Job Evaluated" row header */
+    min-width: 150px;
+    text-align: left; /* Revert to left align for row headers */
+}.transposed-table td:nth-child(1) { /* Targets the *first row* data cells (Job names) */
+    text-align: left; /* Revert to left align for job names */
+}
+
+
+/* --- TOOLTIP STYLES --- */.tooltip {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    background-color: var(--tooltip-background);
+    color: var(--tooltip-color);
+    text-align: left;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    white-space: pre-line; /* IMPORTANT: Preserve line breaks */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: opacity 0.3s;
+    max-width: 300px; /* Max width for tooltip */
+    line-height: 1.4;
+}.tooltip::after { /* Tooltip arrow/caret */
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent var(--tooltip-background) transparent;
+}.recommendation-history-table td:hover.tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* --- ADDED to make the textarea wider --- */
+textarea {
+    width: calc(100%);
+}
